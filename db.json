@@ -1,0 +1,10 @@
+{
+    "users": [
+        { "id": "1", "name": "Deepak Pathak", "age": 35 },
+        { "id": "2", "name": "Jyoti Pathak", "age":  33},
+        { "id": "3", "name": "Kishore Pathak", "age":  31},
+        { "id": "4", "name": "Kavita Devisetti", "age":  29},
+        { "id": "5", "name": "Gaurav Kashyap", "age":  35},
+        { "id": "6", "name": "Nishant Sharma", "age":  28}
+    ]
+}
