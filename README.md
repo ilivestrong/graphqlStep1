@@ -10,3 +10,4 @@ Support nested query for Company Type on User Type based on field - 'company'
 Support for mutations - Create/ Delete/ Update
 Add unit testing capability - Mocha, Chai and SinonJS
 Add async function test
+Add promise function test - Include 'chai-as-promise' npm package

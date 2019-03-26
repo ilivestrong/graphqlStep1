@@ -1,5 +1,6 @@
 const chai = require('chai')
 const { expect } = chai
+chai.use(require('chai-as-promised'))
 
 const sinon = require('sinon')
 
@@ -51,19 +52,35 @@ function dummyAsyncFunc(boolValue, cb) {
     setImmediate(() => cb(boolValue ? "You passed TRUE" : "You passed FALSE"))
 }
 
+function dummyAsyncFuncReturnPromise(boolValue) {
+    return new Promise(function (resolve) {
+        setImmediate(resolve(boolValue ? "You passed TRUE" : "You passed FALSE"))
+    })
+}
+
 describe.only("AsyncAndPromiseTest", function () {
 
     it("should return 'You passed TRUE' ", function () {
-        dummyAsyncFunc(true, function(data){
+        dummyAsyncFunc(true, function (data) {
             expect(data).to.equal("You passed TRUE")
             //done()
         })
     })
 
     it("should return 'You passed FALSE' ", function () {
-        dummyAsyncFunc(false, function(data){
+        dummyAsyncFunc(false, function (data) {
             expect(data).to.equal("You passed FALSE")
             //done()
         })
+    })
+
+    it("for Promises - should return 'You passed TRUE'", function() {
+        const dummyFnPromise = dummyAsyncFuncReturnPromise(true)
+        expect(dummyFnPromise).to.eventually.equal('You passed TRUE')
+    })
+
+    it("for Promises - should return 'You passed FALSE'", function() {
+        const dummyFnPromise = dummyAsyncFuncReturnPromise(false)
+        expect(dummyFnPromise).to.eventually.equal('You passed FALSE')
     })
 })
