@@ -7,4 +7,4 @@ Add Multiple Entry points to GraphQL client : User Type and Company Type
 Support nested query for Company Type on User Type based on field - 'company'
 
 26-Mar-2019
-Support for mutations
+Support for mutations - Create/ Delete/ Update
