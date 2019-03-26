@@ -9,3 +9,4 @@ Support nested query for Company Type on User Type based on field - 'company'
 26-Mar-2019
 Support for mutations - Create/ Delete/ Update
 Add unit testing capability - Mocha, Chai and SinonJS
+Add async function test
